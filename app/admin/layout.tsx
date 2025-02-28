@@ -4,30 +4,34 @@ import Drawer from "@/components/drawer";
 import { HomeIcon } from "@heroicons/react/24/outline";
 
 const menu = [
-  { name: "Dashboard", href: "/superadmin", icon: HomeIcon },
+  { name: "Dashboard", href: "/admin", icon: HomeIcon },
   {
-    name: "Soporte",
-    href: "/superadmin/soporte",
+    name: "Espacios",
+    href: "/admin/espacios",
+    icon: HomeIcon,
+  },
+  { name: "Reservas", href: "/admin/reservas", icon: HomeIcon },
+  {
+    name: "Solicitudes",
+    href: "/admin/solicitudes",
     icon: HomeIcon,
     submenu: [
       {
-        name: "Consultas",
-        href: "/superadmin/soporte/consultas",
+        name: "Presupuesto",
+        href: "/admin/solicitudes/presupuesto",
         icon: HomeIcon,
       },
       {
-        name: "Reportes",
-        href: "/superadmin/soporte/reportes",
+        name: "Aprobación",
+        href: "/admin/solicitudes/aprobacion",
         icon: HomeIcon,
       },
     ],
   },
-  { name: "Instituciones", href: "/superadmin/instituciones", icon: HomeIcon },
-  { name: "Espacios", href: "/superadmin/espacios", icon: HomeIcon },
-  { name: "Usuarios", href: "/superadmin/usuarios", icon: HomeIcon },
+  { name: "Pagos", href: "/admin/pagos", icon: HomeIcon },
 ];
 
-export default function SuperadminLayout({
+export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;

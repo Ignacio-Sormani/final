@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import AcmeLogo from "@/components/acme-logo";
 import { usePathname } from "next/navigation";
 
 interface LinkProps {
@@ -18,9 +17,9 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
   const pathname = usePathname();
 
   return (
-    <div className="flex h-full flex-col px-3 py-3">
+    <div className="flex h-full flex-col px-3 py-3 w-64">
       <Link
-        className="mb-2 flex h-20 items-end justify-start rounded-md bg-blue-600 p-4 md:h-40"
+        className="mb-2 flex h-40 items-end justify-start rounded-md bg-blue-600 p-4"
         href="/"
       >
         <div className="w-40 text-white"></div>
@@ -45,7 +44,9 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
                         <li key={sublink.name}>
                           <Link
                             href={sublink.href}
-                            className={`${pathname === link.href && "active"}`}
+                            className={`${
+                              pathname === sublink.href && "active"
+                            }`}
                           >
                             <LinkIcon className="w-6" />
                             <p>{sublink.name}</p>
