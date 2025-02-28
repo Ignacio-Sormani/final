@@ -29,7 +29,7 @@ const config: Config = {
   },
   plugins: [require("@tailwindcss/forms"), require("daisyui")],
   daisyui: {
-    themes: ["cupcake", "dark", "cmyk"],
+    themes: ["dark", "cmyk"],
   },
 };
 
