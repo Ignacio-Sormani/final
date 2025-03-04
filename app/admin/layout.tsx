@@ -1,5 +1,6 @@
 "use client";
 
+import Avatar from "@/components/avatar";
 import Drawer from "@/components/drawer";
 import {
   HomeIcon,
@@ -68,7 +69,12 @@ export default function AdminLayout({
       <div className="hidden flex-none md:flex md:w-64">
         <Drawer menu={menu} />
       </div>
-      <div className="grow p-6 md:overflow-y-auto md:p-12">{children}</div>
+      <div className="grow p-4 md:overflow-y-auto md:px-12 py-3">
+        <div className="h-20">
+          <Avatar />
+        </div>
+        {children}
+      </div>
     </div>
   );
 }
