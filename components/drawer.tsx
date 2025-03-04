@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ArrowLeftStartOnRectangleIcon } from "@heroicons/react/24/outline";
 
 interface LinkProps {
   name: string;
@@ -18,15 +19,16 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
   const pathname = usePathname();
 
   return (
-    <div className="flex h-full flex-col px-3 py-3 w-64">
+    <div className="flex h-full flex-col px-3 py-3 w-64 bg-base-100 rounded-selector">
       <Link
-        className="mb-2 flex h-40 items-end justify-start rounded-md bg-primary p-4"
+        className="mb-2 flex h-20 items-center justify-start rounded-md p-4"
         href="/"
       >
-        <div className="w-40">HOME</div>
+        <div className="w-full text-center">LOGO</div>
       </Link>
-      <div className="flex h-full flex-col rounded-md bg-secondary p-2">
-        <ul className="menu grow">
+      <div className="h-1 bg-base-200" />
+      <div className="flex h-full flex-col rounded-md p-2">
+        <ul className="menu grow w-full">
           {menu.length &&
             menu.map((link) => {
               const LinkIcon = link.icon;
@@ -34,26 +36,33 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
                 <li key={link.name} className="mb-2">
                   <Link
                     href={link.href}
-                    className={`${pathname === link.href && "menu-active"}`}
+                    className={`${
+                      pathname === link.href &&
+                      "bg-neutral text-neutral-content"
+                    }`}
                   >
                     <LinkIcon className="w-6" />
                     <p>{link.displayableName}</p>
                   </Link>
                   {link.submenu && link.submenu.length && (
                     <ul>
-                      {link.submenu.map((sublink) => (
-                        <li key={sublink.name}>
-                          <Link
-                            href={sublink.href}
-                            className={`${
-                              pathname === sublink.href && "menu-active"
-                            }`}
-                          >
-                            <LinkIcon className="w-6" />
-                            <p>{sublink.displayableName}</p>
-                          </Link>
-                        </li>
-                      ))}
+                      {link.submenu.map((sublink) => {
+                        const SublinkIcon = sublink.icon;
+                        return (
+                          <li key={sublink.name}>
+                            <Link
+                              href={sublink.href}
+                              className={`${
+                                pathname === sublink.href &&
+                                "bg-neutral text-neutral-content"
+                              }`}
+                            >
+                              <SublinkIcon className="w-6" />
+                              <p>{sublink.displayableName}</p>
+                            </Link>
+                          </li>
+                        );
+                      })}
                     </ul>
                   )}
                 </li>
@@ -62,10 +71,11 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
         </ul>
         <div>
           <Link
-            className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium bg-neutral text-neutral-content"
+            className="flex h-[48px] w-full grow items-center justify-around gap-2 rounded-md p-3 text-sm font-medium bg-base-200 hover:bg-neutral hover:text-neutral-content"
             href="/"
           >
-            <div>Cerrar Sesión</div>
+            Cerrar Sesión
+            <ArrowLeftStartOnRectangleIcon className="w-6 rotate-180" />
           </Link>
         </div>
       </div>

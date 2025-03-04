@@ -1,7 +1,15 @@
 "use client";
 
 import Drawer from "@/components/drawer";
-import { HomeIcon } from "@heroicons/react/24/outline";
+import {
+  HomeIcon,
+  HomeModernIcon,
+  TicketIcon,
+  QuestionMarkCircleIcon,
+  FlagIcon,
+  BuildingLibraryIcon,
+  UsersIcon,
+} from "@heroicons/react/24/outline";
 
 const menu = [
   {
@@ -14,19 +22,19 @@ const menu = [
     name: "Support",
     displayableName: "Tickets",
     href: "/superadmin/tickets",
-    icon: HomeIcon,
+    icon: TicketIcon,
     submenu: [
       {
         name: "Queries",
         displayableName: "Consultas",
         href: "/superadmin/tickets/queries",
-        icon: HomeIcon,
+        icon: QuestionMarkCircleIcon,
       },
       {
         name: "Reports",
         displayableName: "Reportes",
         href: "/superadmin/tickets/reports",
-        icon: HomeIcon,
+        icon: FlagIcon,
       },
     ],
   },
@@ -34,19 +42,19 @@ const menu = [
     name: "Institutions",
     displayableName: "Instituciones",
     href: "/superadmin/institutions",
-    icon: HomeIcon,
+    icon: BuildingLibraryIcon,
   },
   {
-    name: "Spces",
+    name: "Spaces",
     displayableName: "Espacios",
     href: "/superadmin/spaces",
-    icon: HomeIcon,
+    icon: HomeModernIcon,
   },
   {
     name: "Users",
     displayableName: "Usuarios",
     href: "/superadmin/users",
-    icon: HomeIcon,
+    icon: UsersIcon,
   },
 ];
 
@@ -56,7 +64,7 @@ export default function SuperadminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
+    <div className="flex h-screen flex-col bg-base-300 px-3 py-3 md:flex-row md:overflow-hidden">
       <div className="hidden flex-none md:flex md:w-64">
         <Drawer menu={menu} />
       </div>
