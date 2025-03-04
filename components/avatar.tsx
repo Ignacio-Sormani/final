@@ -5,7 +5,7 @@ export default function Avatar() {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <div className="flex flex-row justify-between items-center min-w-50 w-fit p-1 bg-base-100 rounded-full">
+    <div className="flex flex-row justify-between items-center max-w-1/2 p-1 bg-base-100 rounded-full">
       <div className="flex-grow px-4">Hi, Amy!</div>
       {!imageError ? (
         <div className="avatar">

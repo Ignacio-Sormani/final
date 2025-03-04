@@ -24,6 +24,7 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
         className="mb-2 flex h-20 items-center justify-start rounded-md p-4"
         href="/"
       >
+        {/* //! Update Logo */}
         <div className="w-full text-center">LOGO</div>
       </Link>
       <div className="h-1 bg-base-200" />
