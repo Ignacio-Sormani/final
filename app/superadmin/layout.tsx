@@ -4,27 +4,50 @@ import Drawer from "@/components/drawer";
 import { HomeIcon } from "@heroicons/react/24/outline";
 
 const menu = [
-  { name: "Dashboard", href: "/superadmin", icon: HomeIcon },
   {
-    name: "Soporte",
-    href: "/superadmin/soporte",
+    name: "Superadmin Dashboard",
+    displayableName: "Dashboard",
+    href: "/superadmin",
+    icon: HomeIcon,
+  },
+  {
+    name: "Support",
+    displayableName: "Tickets",
+    href: "/superadmin/tickets",
     icon: HomeIcon,
     submenu: [
       {
-        name: "Consultas",
-        href: "/superadmin/soporte/consultas",
+        name: "Queries",
+        displayableName: "Consultas",
+        href: "/superadmin/tickets/queries",
         icon: HomeIcon,
       },
       {
-        name: "Reportes",
-        href: "/superadmin/soporte/reportes",
+        name: "Reports",
+        displayableName: "Reportes",
+        href: "/superadmin/tickets/reports",
         icon: HomeIcon,
       },
     ],
   },
-  { name: "Instituciones", href: "/superadmin/instituciones", icon: HomeIcon },
-  { name: "Espacios", href: "/superadmin/espacios", icon: HomeIcon },
-  { name: "Usuarios", href: "/superadmin/usuarios", icon: HomeIcon },
+  {
+    name: "Institutions",
+    displayableName: "Instituciones",
+    href: "/superadmin/institutions",
+    icon: HomeIcon,
+  },
+  {
+    name: "Spces",
+    displayableName: "Espacios",
+    href: "/superadmin/spaces",
+    icon: HomeIcon,
+  },
+  {
+    name: "Users",
+    displayableName: "Usuarios",
+    href: "/superadmin/users",
+    icon: HomeIcon,
+  },
 ];
 
 export default function SuperadminLayout({

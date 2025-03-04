@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 interface LinkProps {
   name: string;
+  displayableName: string;
   href: string;
   icon: React.ElementType;
 }
@@ -36,7 +37,7 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
                     className={`${pathname === link.href && "menu-active"}`}
                   >
                     <LinkIcon className="w-6" />
-                    <p>{link.name}</p>
+                    <p>{link.displayableName}</p>
                   </Link>
                   {link.submenu && link.submenu.length && (
                     <ul>
@@ -49,7 +50,7 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
                             }`}
                           >
                             <LinkIcon className="w-6" />
-                            <p>{sublink.name}</p>
+                            <p>{sublink.displayableName}</p>
                           </Link>
                         </li>
                       ))}

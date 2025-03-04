@@ -4,31 +4,50 @@ import Drawer from "@/components/drawer";
 import { HomeIcon } from "@heroicons/react/24/outline";
 
 const menu = [
-  { name: "Dashboard", href: "/admin", icon: HomeIcon },
   {
-    name: "Espacios",
-    href: "/admin/espacios",
+    name: "Admin Dashboard",
+    displayableName: "Dashboard",
+    href: "/admin",
     icon: HomeIcon,
   },
-  { name: "Reservas", href: "/admin/reservas", icon: HomeIcon },
   {
-    name: "Solicitudes",
-    href: "/admin/solicitudes",
+    name: "spaces",
+    displayableName: "Espacios",
+    href: "/admin/spaces",
+    icon: HomeIcon,
+  },
+  {
+    name: "Reservations",
+    displayableName: "Reservas",
+    href: "/admin/reservations",
+    icon: HomeIcon,
+  },
+  {
+    name: "Requests",
+    displayableName: "Solicitudes",
+    href: "/admin/requests",
     icon: HomeIcon,
     submenu: [
       {
-        name: "Presupuesto",
-        href: "/admin/solicitudes/presupuesto",
+        name: "Budget",
+        displayableName: "Presupuesto",
+        href: "/admin/requests/budget",
         icon: HomeIcon,
       },
       {
-        name: "Aprobación",
-        href: "/admin/solicitudes/aprobacion",
+        name: "Approval",
+        displayableName: "Aprobación",
+        href: "/admin/requests/approval",
         icon: HomeIcon,
       },
     ],
   },
-  { name: "Pagos", href: "/admin/pagos", icon: HomeIcon },
+  {
+    name: "Payments",
+    displayableName: "Pagos",
+    href: "/admin/payments",
+    icon: HomeIcon,
+  },
 ];
 
 export default function AdminLayout({
