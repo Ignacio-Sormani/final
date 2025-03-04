@@ -33,7 +33,7 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
                 <li key={link.name} className="mb-2">
                   <Link
                     href={link.href}
-                    className={`${pathname === link.href && "active"}`}
+                    className={`${pathname === link.href && "menu-active"}`}
                   >
                     <LinkIcon className="w-6" />
                     <p>{link.name}</p>
@@ -45,7 +45,7 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
                           <Link
                             href={sublink.href}
                             className={`${
-                              pathname === sublink.href && "active"
+                              pathname === sublink.href && "menu-active"
                             }`}
                           >
                             <LinkIcon className="w-6" />

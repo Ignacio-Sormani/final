@@ -37,7 +37,7 @@ export default function SuperadminLayout({
       <div className="hidden flex-none md:flex md:w-64">
         <Drawer menu={menu} />
       </div>
-      <div className="flex-grow p-6 md:overflow-y-auto md:p-12">{children}</div>
+      <div className="grow p-6 md:overflow-y-auto md:p-12">{children}</div>
     </div>
   );
 }

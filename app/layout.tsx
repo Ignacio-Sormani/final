@@ -1,4 +1,4 @@
-import '@/app/global.css'
+import "@/app/global.css";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -9,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html data-theme='cmyk' lang="en">
+    <html data-theme="light" lang="en">
       <body className={`${montserrat.className} antialiased`}>{children}</body>
     </html>
   );
