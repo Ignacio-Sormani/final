@@ -19,12 +19,12 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
   return (
     <div className="flex h-full flex-col px-3 py-3 w-64">
       <Link
-        className="mb-2 flex h-40 items-end justify-start rounded-md bg-blue-600 p-4"
+        className="mb-2 flex h-40 items-end justify-start rounded-md bg-primary p-4"
         href="/"
       >
-        <div className="w-40 text-white"></div>
+        <div className="w-40">HOME</div>
       </Link>
-      <div className="flex h-full flex-col rounded-md bg-blue-200 p-2">
+      <div className="flex h-full flex-col rounded-md bg-secondary p-2">
         <ul className="menu grow">
           {menu.length &&
             menu.map((link) => {
@@ -61,7 +61,7 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
         </ul>
         <div>
           <Link
-            className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium bg-sky-100 hover:text-blue-600"
+            className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium bg-neutral text-neutral-content"
             href="/"
           >
             <div>Cerrar Sesión</div>
