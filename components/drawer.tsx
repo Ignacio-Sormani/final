@@ -19,7 +19,7 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
   const pathname = usePathname();
 
   return (
-    <div className="flex h-full flex-col px-3 py-3 w-64 bg-base-100 rounded-selector">
+    <div className="flex h-full flex-col p-3 w-64 bg-primary text-primary-content">
       <Link
         className="mb-2 flex h-20 items-center justify-start rounded-md p-4"
         href="/"
@@ -27,7 +27,7 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
         {/* //! Update Logo */}
         <div className="w-full text-center">LOGO</div>
       </Link>
-      <div className="h-1 bg-base-200" />
+      <div className="h-0.5 bg-neutral" />
       <div className="flex h-full flex-col rounded-md p-2">
         <ul className="menu grow w-full">
           {menu.length &&
@@ -70,9 +70,11 @@ export default function Drawer({ menu }: { menu: MenuProps[] }) {
               );
             })}
         </ul>
+        <div className="h-0.5 bg-neutral" />
+
         <div>
           <Link
-            className="flex h-[48px] w-full grow items-center justify-around gap-2 rounded-md p-3 text-sm font-medium bg-base-200 hover:bg-neutral hover:text-neutral-content"
+            className="flex mt-4 h-[48px] w-full grow items-center justify-around gap-2 rounded-md p-3 text-sm font-medium"
             href="/"
           >
             Cerrar Sesión

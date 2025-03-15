@@ -9,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html data-theme="mytheme" lang="en">
+    <html data-theme="business" lang="en">
       <body className={`${montserrat.className} antialiased`}>{children}</body>
     </html>
   );
