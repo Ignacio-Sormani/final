@@ -18,6 +18,7 @@ import {
   TicketType,
   TicketStatus,
 } from "./enums";
+import { ObjectId } from "mongoose";
 
 async function seed() {
   try {
@@ -40,11 +41,13 @@ async function seed() {
       name: "Grand Event Center",
       address: "123 Main St, City",
       contactPhone: "+541112345678",
+      admins: [],
     });
     const institution2 = await Institution.create({
       name: "Corporate Hub",
       address: "456 Business Rd, City",
       contactPhone: "+541198765432",
+      admins: [],
     });
     console.log("Institutions created");
 
@@ -62,6 +65,8 @@ async function seed() {
       roles: [UserRole.ADMIN],
       institutions: [institution1._id],
     });
+    institution1.admins?.push(userAdmin._id as ObjectId);
+    institution1.save();
 
     const userSuperAdmin = await User.create({
       name: "Charlie Superadmin",

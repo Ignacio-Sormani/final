@@ -1,12 +1,12 @@
 import { Schema, model, Document } from "mongoose";
 
-//! Add admins
 export interface IInstitution extends Document {
   name: string;
   address: string;
   contactPhone: string;
   createdAt: Date;
   updatedAt: Date;
+  admins?: Schema.Types.ObjectId[];
 }
 
 const InstitutionSchema = new Schema<IInstitution>(
@@ -21,6 +21,7 @@ const InstitutionSchema = new Schema<IInstitution>(
         "Please enter a valid Argentine phone number",
       ],
     },
+    admins: [{ type: Schema.Types.ObjectId, ref: "User" }],
   },
   { timestamps: true }
 );
