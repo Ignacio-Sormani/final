@@ -8,10 +8,13 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@radix-ui/react-slot": "^1.1.2",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/postcss": "^4.0.9",
     "bcrypt": "^5.1.1",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "lucide-react": "^0.482.0",
     "mongodb": "^6.13.1",
     "mongoose": "^8.11.0",
     "next": "latest",
@@ -20,7 +23,9 @@
     "postgres": "^3.4.5",
     "react": "latest",
     "react-dom": "latest",
+    "tailwind-merge": "^3.0.2",
     "tailwindcss": "4.0.9",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "5.7.3",
     "use-debounce": "^10.0.4",
     "zod": "^3.24.1"
