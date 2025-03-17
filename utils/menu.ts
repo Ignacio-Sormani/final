@@ -12,8 +12,15 @@ import {
   UsersIcon,
 } from "@heroicons/react/24/outline";
 
+interface LinkProps {
+  name: string;
+  displayableName: string;
+  href: string;
+  icon: React.ElementType;
+}
+
 //! Update icons
-export const adminMenu = [
+export const adminMenu: LinkProps[] = [
   {
     name: "Admin Dashboard",
     displayableName: "Dashboard",
@@ -27,9 +34,9 @@ export const adminMenu = [
     icon: HomeModernIcon,
   },
   {
-    name: "Reservations",
+    name: "Bookings",
     displayableName: "Reservas",
-    href: "/admin/reservations",
+    href: "/admin/bookings",
     icon: CalendarIcon,
   },
   {
@@ -37,20 +44,6 @@ export const adminMenu = [
     displayableName: "Solicitudes",
     href: "/admin/requests",
     icon: TicketIcon,
-    submenu: [
-      {
-        name: "Budget",
-        displayableName: "Presupuesto",
-        href: "/admin/requests/budget",
-        icon: CalculatorIcon,
-      },
-      {
-        name: "Approval",
-        displayableName: "Aprobación",
-        href: "/admin/requests/approval",
-        icon: HandThumbUpIcon,
-      },
-    ],
   },
   {
     name: "Payments",
@@ -60,18 +53,16 @@ export const adminMenu = [
   },
 ];
 
-export const adminMenuMap: any = {
+export const adminMenuMap: Record<string, string> = {
   "/admin": "Admin Dashboard",
   "/admin/spaces": "Espacios",
   "/admin/reservations": "Reservas",
   "/admin/requests": "Solicitudes",
-  "/admin/requests/budget": "Solicitudes",
-  "/admin/requests/approval": "Solicitudes",
   "/admin/payments": "Pagos",
 };
 
 //! Update icons
-export const superadminMenu = [
+export const superadminMenu: LinkProps[] = [
   {
     name: "Superadmin Dashboard",
     displayableName: "Dashboard",
@@ -83,20 +74,6 @@ export const superadminMenu = [
     displayableName: "Tickets",
     href: "/superadmin/tickets",
     icon: TicketIcon,
-    submenu: [
-      {
-        name: "Queries",
-        displayableName: "Consultas",
-        href: "/superadmin/tickets/queries",
-        icon: QuestionMarkCircleIcon,
-      },
-      {
-        name: "Reports",
-        displayableName: "Reportes",
-        href: "/superadmin/tickets/reports",
-        icon: FlagIcon,
-      },
-    ],
   },
   {
     name: "Institutions",
@@ -118,11 +95,9 @@ export const superadminMenu = [
   },
 ];
 
-export const superadminMenuMap: any = {
+export const superadminMenuMap: Record<string, string> = {
   "/superadmin": "Superadmin Dashboard",
   "/superadmin/tickets": "Tickets",
-  "/superadmin/tickets/queries": "Consultas",
-  "/superadmin/tickets/reports": "Reportes",
   "/superadmin/institutions": "Instituciones",
   "/superadmin/spaces": "Espacios",
   "/superadmin/users": "Usuarios",

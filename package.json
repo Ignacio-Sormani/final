@@ -30,7 +30,6 @@
     "@types/node": "22.10.7",
     "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",
-    "daisyui": "^5.0.0",
     "dotenv": "^16.4.7",
     "tsx": "^4.19.3"
   }
