@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { superadminMenu, superadminMenuMap } from "@/utils/menu";
+import { superadminMenu, superadminMenuMap } from "@/lib/menu";
 
 export default function SuperadminLayout({
   children,

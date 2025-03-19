@@ -4,7 +4,7 @@
     "build": "next build",
     "dev": "next dev --turbopack",
     "start": "next start",
-    "seed": "tsx -r dotenv/config ./utils/seed.ts"
+    "seed": "tsx -r dotenv/config ./lib/seed.ts"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -12,7 +12,7 @@
     "@radix-ui/react-slot": "^1.1.2",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/postcss": "^4.0.9",
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.482.0",

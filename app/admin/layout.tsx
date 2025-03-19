@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { adminMenu, adminMenuMap } from "@/utils/menu";
+import { adminMenu, adminMenuMap } from "@/lib/menu";
 
 export default function AdminLayout({
   children,

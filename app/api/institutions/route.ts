@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { connectToDB } from "@/utils/database";
+import { connectToDB } from "@/lib/database";
 import { Institution } from "@/models";
 
 // GET - Fetch all institutions

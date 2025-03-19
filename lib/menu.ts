@@ -1,13 +1,9 @@
 import {
   HomeIcon,
   TicketIcon,
-  CalculatorIcon,
-  HandThumbUpIcon,
   HomeModernIcon,
   CalendarIcon,
   BanknotesIcon,
-  QuestionMarkCircleIcon,
-  FlagIcon,
   BuildingLibraryIcon,
   UsersIcon,
 } from "@heroicons/react/24/outline";
