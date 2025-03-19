@@ -1,5 +1,5 @@
-import { Schema, model, Document } from "mongoose";
-import { PaymentStatus } from "@/utils/enums";
+import mongoose, { Schema, model, Document } from "mongoose";
+import { PaymentStatus } from "@/lib/enums";
 
 //! Add client
 export interface IPayment extends Document {
@@ -28,4 +28,5 @@ const PaymentSchema = new Schema<IPayment>(
   { timestamps: true }
 );
 
-export const Payment = model<IPayment>("Payment", PaymentSchema);
+export const Payment =
+  mongoose.models?.Payment || model<IPayment>("Payment", PaymentSchema);

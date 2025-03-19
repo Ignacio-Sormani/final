@@ -1,5 +1,5 @@
-import { Schema, model, Document } from "mongoose";
-import { RequestType, RequestStatus } from "@/utils/enums";
+import mongoose, { Schema, model, Document } from "mongoose";
+import { RequestType, RequestStatus } from "@/lib/enums";
 
 export interface IRequest extends Document {
   user: Schema.Types.ObjectId;
@@ -35,4 +35,5 @@ const RequestSchema = new Schema<IRequest>(
   { timestamps: true }
 );
 
-export const Request = model<IRequest>("Request", RequestSchema);
+export const Request =
+  mongoose.models?.Request || model<IRequest>("Request", RequestSchema);

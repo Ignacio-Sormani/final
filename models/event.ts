@@ -1,5 +1,5 @@
-import { Schema, model, Document } from "mongoose";
-import { EventStatus } from "@/utils/enums";
+import mongoose, { Schema, model, Document } from "mongoose";
+import { EventStatus } from "@/lib/enums";
 
 export interface IEvent extends Document {
   name: string;
@@ -35,4 +35,5 @@ const EventSchema = new Schema<IEvent>(
   { timestamps: true }
 );
 
-export const Event = model<IEvent>("Event", EventSchema);
+export const Event =
+  mongoose.models?.Event || model<IEvent>("Event", EventSchema);

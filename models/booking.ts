@@ -1,5 +1,5 @@
-import { Schema, model, Document } from "mongoose";
-import { BookingStatus } from "@/utils/enums";
+import mongoose, { Schema, model, Document } from "mongoose";
+import { BookingStatus } from "@/lib/enums";
 
 export interface IContractedService {
   serviceName: string;
@@ -47,4 +47,5 @@ const BookingSchema = new Schema<IBooking>(
   { timestamps: true }
 );
 
-export const Booking = model<IBooking>("Booking", BookingSchema);
+export const Booking =
+  mongoose.models?.Booking || model<IBooking>("Booking", BookingSchema);

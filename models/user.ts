@@ -1,21 +1,22 @@
-import { Schema, model, Document } from "mongoose";
-import { UserRole } from "@/utils/enums";
+import mongoose, { Schema, model, Document } from "mongoose";
+import { UserRole } from "@/lib/enums";
 
-//! Add isActive
 export interface IUser extends Document {
-  name: string;
+  firstname: string;
+  lastname: string;
   email: string;
   password: string;
-  roles: UserRole[];
-  // For admin users: the institutions they are assigned to
-  institutions?: Schema.Types.ObjectId[];
+  role: UserRole;
+  institution?: Schema.Types.ObjectId;
+  isActive: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
 
 const UserSchema = new Schema<IUser>(
   {
-    name: { type: String, required: true },
+    firstname: { type: String, required: true },
+    lastname: { type: String, required: true },
     email: {
       type: String,
       required: true,
@@ -26,15 +27,25 @@ const UserSchema = new Schema<IUser>(
       ],
     },
     password: { type: String, required: true },
-    roles: {
-      type: [String],
+    role: {
+      type: String,
       enum: Object.values(UserRole),
-      default: [UserRole.CLIENT],
+      default: UserRole.CLIENT,
       required: true,
     },
-    institutions: [{ type: Schema.Types.ObjectId, ref: "Institution" }],
+    institution: {
+      type: Schema.Types.ObjectId,
+      ref: "Institution",
+      validate: {
+        validator: function (this: IUser, value: Schema.Types.ObjectId) {
+          return this.role !== UserRole.ADMIN || !!value;
+        },
+        message: "Admin users must have an institution assigned.",
+      },
+    },
+    isActive: { type: Boolean, default: true },
   },
   { timestamps: true }
 );
 
-export const User = model<IUser>("User", UserSchema);
+export const User = mongoose.models?.User || model<IUser>("User", UserSchema);

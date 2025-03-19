@@ -1,4 +1,4 @@
-import { Schema, model, Document } from "mongoose";
+import mongoose, { Schema, model, Document } from "mongoose";
 
 export interface IInstitution extends Document {
   name: string;
@@ -26,7 +26,6 @@ const InstitutionSchema = new Schema<IInstitution>(
   { timestamps: true }
 );
 
-export const Institution = model<IInstitution>(
-  "Institution",
-  InstitutionSchema
-);
+export const Institution =
+  mongoose.models?.Institution ||
+  model<IInstitution>("Institution", InstitutionSchema);

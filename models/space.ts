@@ -1,5 +1,5 @@
-import { Schema, model, Document } from "mongoose";
-import { SpaceCategory } from "@/utils/enums";
+import mongoose, { Schema, model, Document } from "mongoose";
+import { SpaceCategory } from "@/lib/enums";
 
 export interface IService {
   name: string;
@@ -62,4 +62,5 @@ const SpaceSchema = new Schema<ISpace>(
   { timestamps: true }
 );
 
-export const Space = model<ISpace>("Space", SpaceSchema);
+export const Space =
+  mongoose.models?.Space || model<ISpace>("Space", SpaceSchema);

@@ -1,5 +1,5 @@
-import { Schema, model, Document } from "mongoose";
-import { TicketType, TicketStatus } from "@/utils/enums";
+import mongoose, { Schema, model, Document } from "mongoose";
+import { TicketType, TicketStatus } from "@/lib/enums";
 
 //! Add Space
 export interface ITicket extends Document {
@@ -32,4 +32,5 @@ const TicketSchema = new Schema<ITicket>(
   { timestamps: true }
 );
 
-export const Ticket = model<ITicket>("Ticket", TicketSchema);
+export const Ticket =
+  mongoose.models?.Ticket || model<ITicket>("Ticket", TicketSchema);
