@@ -1,5 +1,8 @@
+"use client";
+
 import "@/app/global.css";
 import { Montserrat } from "next/font/google";
+import { SessionProvider } from "next-auth/react";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 

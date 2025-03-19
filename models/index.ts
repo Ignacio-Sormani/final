@@ -1,5 +1,3 @@
-// types.ts
-
 export * from "./user";
 export * from "./institution";
 export * from "./space";

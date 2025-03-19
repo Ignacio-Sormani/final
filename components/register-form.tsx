@@ -2,34 +2,57 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { register } from "@/lib/actions";
 
-const RegisterForm = () => {
+const RegisterForm = async () => {
   return (
-    <form className="p-6 md:p-8">
+    <form className="p-6 md:p-8" action={register as any}>
       <div className="flex flex-col gap-6">
         <div className="flex flex-col items-center text-center">
           <h1 className="text-2xl font-bold">Registrate</h1>
         </div>
         <div className="grid gap-2">
           <Label htmlFor="first-name">Nombre</Label>
-          <Input id="first-name" type="text" placeholder="Nombre" required />
+          <Input
+            id="firstname"
+            name="firstname"
+            type="text"
+            placeholder="Nombre"
+            required
+          />
         </div>
         <div className="grid gap-2">
           <Label htmlFor="last-name">Apellido</Label>
-          <Input id="last-name" type="text" placeholder="Apellido" required />
+          <Input
+            id="lastname"
+            name="lastname"
+            type="text"
+            placeholder="Apellido"
+            required
+          />
         </div>
         <div className="grid gap-2">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" type="email" placeholder="m@example.com" required />
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="nombre.apellido@example.com"
+            required
+          />
         </div>
         <div className="grid gap-2">
           <Label htmlFor="password">Contraseña</Label>
-          <Input id="password" type="password" required />
+          <Input id="password" name="password" type="password" required />
         </div>
         <div className="grid gap-2">
-          <Label htmlFor="password2">Repetir Contraseña</Label>
-          <Input id="password2" type="password" required />
-          {/* Validate password */}
+          <Label htmlFor="passwordrepeat">Repetir Contraseña</Label>
+          <Input
+            id="passwordrepeat"
+            name="passwordrepeat"
+            type="password"
+            required
+          />
         </div>
         <Button variant="default" type="submit" className="w-full">
           Crear Cuenta

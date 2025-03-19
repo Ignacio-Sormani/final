@@ -1,8 +1,12 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
+import { SignOut } from "@/components/signout-button";
+import { auth } from "@/auth";
 
-export default function Page() {
+export default async function Page() {
+  const session = await auth();
+
   return (
     <main className="flex min-h-screen flex-col p-6">
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
@@ -14,6 +18,7 @@ export default function Page() {
             </a>
             , brought to you by Vercel.
           </p>
+          {session?.user && <SignOut />}
           <Link
             href="/login"
             className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
