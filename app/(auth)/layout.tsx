@@ -16,13 +16,13 @@ export default function LoginForm({
       )}
       {...props}
     >
-      <Card className="overflow-hidden h-2/3 w-2/3 max-w-96 md:w-3/4 md:max-w-192">
+      <Card className="overflow-hidden h-2/3 w-2/3 max-w-96 py-0 md:w-3/4 md:max-w-192">
         <CardContent className="grid p-0 md:grid-cols-2">
           {children}
           <Image
-            src="/hero-desktop.png"
-            width={1000}
-            height={760}
+            src="/auth.jpeg"
+            width={3888}
+            height={5184}
             alt="Screenshots of the dashboard project showing desktop version"
             className="hidden md:block inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
           />
