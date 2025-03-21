@@ -17,7 +17,7 @@ export const register = async (formData: FormData) => {
   }
 
   try {
-    connectToDB();
+    await connectToDB();
 
     const { firstname, lastname, email, password } = validatedFields.data;
 

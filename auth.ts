@@ -1,13 +1,13 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import { connectToDB } from "./lib/database";
-import { User } from "./models";
+import { connectToDB } from "@/lib/database";
+import { User } from "@/models";
 import bcrypt from "bcryptjs";
-import { UserRole } from "./lib/enums";
+import { UserRole } from "@/lib/enums";
 
 const login = async ({ email, password }: any) => {
   try {
-    connectToDB();
+    await connectToDB();
 
     const user = await User.findOne({ email });
     if (!user?.isActive) throw new Error("Credenciales incorrectas");
